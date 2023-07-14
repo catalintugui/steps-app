@@ -35,24 +35,28 @@ function App() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <button
-              className={`${step === 1 ? "button-inactive" : "button-active"}`}
+            <Button
+              stepNumber={1}
+              messagesList={messages}
               onClick={handlePrevious}
             >
-              previous
-            </button>
-            <button
-              className={`${
-                step === messages.length ? "button-inactive" : "button-active"
-              }`}
-              onClick={handleNext}
-            >
-              next
-            </button>
+              <span>👈</span>previous
+            </Button>
+            <Button stepNumber={3} messagesList={messages} onClick={handleNext}>
+              next<span>👉</span>
+            </Button>
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function Button({ onClick, children }) {
+  return (
+    <button className="button-active" onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
