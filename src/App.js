@@ -35,14 +35,10 @@ function App() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <Button
-              stepNumber={1}
-              messagesList={messages}
-              onClick={handlePrevious}
-            >
+            <Button onClick={handlePrevious}>
               <span>👈</span>previous
             </Button>
-            <Button stepNumber={3} messagesList={messages} onClick={handleNext}>
+            <Button onClick={handleNext}>
               next<span>👉</span>
             </Button>
           </div>
